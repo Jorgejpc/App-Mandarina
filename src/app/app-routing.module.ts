@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', children:[
     { path: '',  component: HomeComponent },
     { path: 'offers', component: OffersComponent},
-    { path: 'producto:/id', component: DetailsBookComponent}, 
+    { path: 'producto/:id', component: DetailsBookComponent}, 
     { path: 'user/login', component: LoginComponent},
     { path: 'user/register', component: RegisterComponent},
     { path: 'user/profile', component: ProfileComponent},
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
-    { path: 'list-book', component: ListBooksComponent}, //Esta es tu lista rafa
+    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa
   ], component: AdminNavigationComponent
 
   },

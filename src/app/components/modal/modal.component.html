@@ -1,0 +1,70 @@
+<div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ !this.service.selectedProduct.id ? 'Crear Libro' : 'Modificar'}}</h5>
+       
+      </div>
+      <div class="modal-body">
+        <form name="formProduct" #formProduct="ngForm" (ngSubmit)="onSaveProduct(formProduct)"> 
+          <input type="text" name="id" [(ngModel)]= "this.service.selectedProduct.id">
+          <div class="form-group">
+            <label for="name" class="col-form-label">Nombre:</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="this.service.selectedProduct.name">
+          </div>
+          <div class="form-row">
+            <div class="form-goup col-md-6">
+          <label for="category">Categoria</label>
+          <select name="category" class="form-control" [(ngModel)]="this.service.selectedProduct.category">
+            <option value="Sala">Sala</option>
+            <option value="Decoracion">Decoracion</option>
+            <option value="Electrodomesticos">Electrodomesticos</option>
+            <option value="Entretenimiento">Entretenimiento</option>
+          </select>
+          </div>
+          <div class="form-group col-md6">
+            <label for="price">precio</label>
+            <input type="text" name="price" class="form-control" placeholder="0,00$" [(ngModel)]="this.service.selectedProduct.price">
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="promocion">Promocion</label>
+                <select name="promocion" class="form-control" [(ngModel)]="this.service.selectedProduct.promocion">
+                  <option value=true>Si</option>
+                  <option value=false>No</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="oferta">Oferta</label>
+                <select name="oferta" class="form-control" [(ngModel)]="this.service.selectedProduct.oferta">
+                  <option value=true>Si</option>
+                  <option value=false>No</option>
+                </select>
+              </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="imagenPrincipal">Imagen Principal</label>
+              <input type="text" name="imagenPrincipal" class="form-control" placeholder="Imagen Principal" [(ngModel)]="this.service.selectedProduct.imagenPrincipal">
+            </div>
+            <div class="form-group col-md-6">
+                
+                    <label for="disponible">Disponibles</label>
+                    <input type="text" name="disponibles" [(ngModel)]="this.service.selectedProduct.disponibles">
+          
+            </div>
+        </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Descripcion:</label>
+            <textarea class="form-control" name="descripcion"[(ngModel)]="this.service.selectedProduct.descripcion"></textarea>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-warning">Guardar</button>
+          </div>
+        </form>
+      </div>
+      
+  </div>
+</div>
