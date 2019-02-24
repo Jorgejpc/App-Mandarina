@@ -26,7 +26,11 @@ import { AdminComponent } from './views/admin/admin.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { ListadeseoComponent } from './components/listadeseo/listadeseo.component'; 
+import { ListadeseoComponent } from './components/listadeseo/listadeseo.component';
+import { AngularFirestore} from '@angular/fire/firestore';
+import { CrudService } from './services/crud.service';
+import { ListacliComponent } from './components/listacli/listacli.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,9 @@ import { ListadeseoComponent } from './components/listadeseo/listadeseo.componen
     AdminComponent,
     AdminSidebarComponent,
     CarritoComponent,
-    ListadeseoComponent
+    ListadeseoComponent,
+    ListacliComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +65,9 @@ import { ListadeseoComponent } from './components/listadeseo/listadeseo.componen
   ],
   providers: [
     AngularFireAuth,
-    ProductosService
+    ProductosService,
+    CrudService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,32 @@
-<ul class="list-group list-group-flush mt-5 ml-5">
-    <li class="list-group-item d-flex justify-content-between border" *ngFor="let item of Productos"><img src="..." alt="..." class="img-thumbnail">
-      {{item.nombre}} Precio={{item.precio}} {{item.apreciacion}} <button type="button" class="btn btn-warning">Modificar</button>
-    </li>
+<section class="row mt-5">
+  <div class="col">
+     <button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modalProduct">Nuevo Producto</button>
+    <table class="table table-hover">
+      <thead>
+        <tr></tr>
+        <th>Nombre</th>
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Descripcion</th>
+        <th>Apreciacion</th>
+        <th>Disponibles</th>
+        <th></th>
+        <th></th>
+ 
+      </thead>
+      <tbody>
+        <tr *ngFor= "let product of products; index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.descripcion}}</td>
+          <td>{{product.apreciacion}}</td>
+          <td>{{product.disponibles}}</td>
+          <td><button class="btn btn-warning" (click)="onPreUpdateProduct(product)"  data-toggle="modal" data-target="#modalProduct">Modificar</button></td>
+          <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ </section>
+   <app-modal></app-modal>
