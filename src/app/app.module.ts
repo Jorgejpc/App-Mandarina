@@ -27,10 +27,11 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListadeseoComponent } from './components/listadeseo/listadeseo.component';
-import { AngularFirestore} from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { CrudService } from './services/crud.service';
 import { ListacliComponent } from './components/listacli/listacli.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ListUsersComponent } from './components/admin/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ModalComponent } from './components/modal/modal.component';
     CarritoComponent,
     ListadeseoComponent,
     ListacliComponent,
-    ModalComponent
+    ModalComponent,
+    ListUsersComponent
   ],
   imports: [
     BrowserModule,
