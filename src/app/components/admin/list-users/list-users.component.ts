@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../../services/data-api.service';
+import { UserInterface } from '../../../models/user';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,14 +11,21 @@ import { NgForm } from '@angular/forms';
 export class ListUsersComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
-  public users = [];
-  public user = '';
+  private users = [];
 
   ngOnInit() {
-    this.dataApi.getAllUsers().subscribe(users => {
-      console.log('USERS', users);
+   this.getListUsers();
+  }
+
+  getListUsers(){
+    this.dataApi.getAllUsers().subscribe( users => {
       this.users = users; 
     })
   }
+
+  onDeleteUser(){
+    console.log('DELETE USER');
+  }
+  
 
 }

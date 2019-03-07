@@ -16,6 +16,8 @@ export class DataApiService {
   }
   private usersCollection: AngularFirestoreCollection<UserInterface>;
   private users: Observable<UserInterface[]>;
+  private userDoc: AngularFirestoreDocument<UserInterface>;
+  private user: Observable<UserInterface>;
 
   getAllUsers(){
     return this.users = this.usersCollection.snapshotChanges()
@@ -27,7 +29,16 @@ export class DataApiService {
       });
     }));
   }
-  addUser(){}
-  updateUser(){}
-  deleteUser(){}
+  addUser(user: UserInterface): void {
+    this.usersCollection.add(user);
+  }
+  updateUser(user: UserInterface): void {
+    let idUser = user.id;
+    this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
+    this.userDoc.update(user);
+  }
+  deleteUser(idUser: string): void{
+    this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
+    this.userDoc.delete();
+  }
 }
