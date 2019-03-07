@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
-    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa
+    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa!
     { path: 'listuser', component: ListUsersComponent}, 
   ], component: AdminNavigationComponent
 
