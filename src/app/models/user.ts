@@ -1,5 +1,5 @@
 export interface Roles{
-    editor?: boolean;
+    inhabilitado?: boolean;
     admin?: boolean;
 }
 

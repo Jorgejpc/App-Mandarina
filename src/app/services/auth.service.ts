@@ -55,7 +55,8 @@ export class AuthService {
       id: user.uid,
       email: user.email,
       roles: {
-        editor: true
+        admin: true,
+        inhabilitado: false
       }
     }
     return userRef.set(data, { merge: true })

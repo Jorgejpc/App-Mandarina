@@ -11,8 +11,8 @@
         <th>Email</th>
         <th>Nombre</th>
         <th>Contraceña</th>
-        <th></th>
-        <th></th>
+        <th>Admin</th>
+        <th>Inhabilitar</th>
  
       </thead>
       <tbody>
@@ -23,6 +23,8 @@
           <td>{{user.email}}</td>
           <td>{{user.name}}</td>
           <td>{{user.password}}</td>
+          <td>{{user.roles.admin}}</td>
+          <td>{{user.roles.inhabilitado}}</td>
           <td><button class="btn btn-warning" (click)="onPreUpdateProduct(product)"  data-toggle="modal" data-target="#modalProduct">Modificar</button></td>
           <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
         </tr>
