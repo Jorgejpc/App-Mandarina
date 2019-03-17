@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { UserInterface } from '../models/user';
+import { UserInterface, Roles } from '../models/user';
 import { Observable } from 'rxjs/internal/observable';
 import { map } from 'rxjs/operators';
 
@@ -18,6 +18,7 @@ export class DataApiService {
   private users: Observable<UserInterface[]>;
   private userDoc: AngularFirestoreDocument<UserInterface>;
   private user: Observable<UserInterface>;
+  public selectedUser: Roles = {};
 
   getAllUsers(){
     return this.users = this.usersCollection.snapshotChanges()

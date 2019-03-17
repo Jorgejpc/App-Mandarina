@@ -55,7 +55,7 @@ export class AuthService {
       id: user.uid,
       email: user.email,
       roles: {
-        admin: true,
+        admin: false,
         inhabilitado: false
       }
     }

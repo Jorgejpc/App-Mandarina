@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class ListUsersComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
-  private users = [];
+  private users: UserInterface [];
 
   ngOnInit() {
    this.getListUsers();
@@ -27,5 +27,4 @@ export class ListUsersComponent implements OnInit {
     console.log('DELETE USER');
   }
   
-
 }

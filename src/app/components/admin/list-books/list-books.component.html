@@ -1,3 +1,4 @@
+<div class="container">
 <section class="row mt-5">
   <div class="col">
      <button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modalProduct">Nuevo Producto</button>
@@ -5,18 +6,19 @@
       <thead>
         <tr></tr>
         <th>#</th>
+        <th>Imagen</th>
         <th>Nombre</th>
         <th>Categoria</th>
         <th>Descripcion</th>
         <th>Apreciacion</th>
         <th>Disponibles</th>
         <th></th>
-        <th></th>
  
       </thead>
       <tbody>
         <tr *ngFor= "let product of products; index as i">
           <th scope="row">{{i+1}}</th>
+          <td><img width="70" height="70" class=" rounded-circle" src="{{product.imagenPrincipal}}" alt="{{product.imagenPrincipal}}"></td> 
           <td>{{product.name}}</td>
           <td>{{product.category}}</td>
           <td>{{product.descripcion}}</td>
@@ -30,3 +32,4 @@
   </div>
  </section>
    <app-modal></app-modal>
+</div>
