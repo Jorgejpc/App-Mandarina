@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-listacli',
@@ -9,18 +10,24 @@ import { CrudService } from 'src/app/services/crud.service';
 export class ListacliComponent implements OnInit {
 
   constructor(private productService: CrudService) { }
-
+  
+  public filtroProduct= '';
+  public alpha=0;
   public products= [];
 
    public product= ''; 
 
   ngOnInit() {
     this.productService.getProducts().subscribe(products=>{
-      console.log('PRODUCTS', products);
       this.products = products;
 
     })
    
+  }
+
+  setAlpha(a:number){
+  this.alpha=a;
+  console.log(this.alpha);
   }
 
 }

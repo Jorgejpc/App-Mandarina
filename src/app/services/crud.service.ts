@@ -27,6 +27,7 @@ export class CrudService {
   public selectedProduct: Producto ={
     id:null
   };
+  
 
 
   getProducts(){
@@ -71,6 +72,8 @@ export class CrudService {
     this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
     this.productDoc.delete();
   }
+
+ 
 
 
 }

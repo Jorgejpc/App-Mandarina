@@ -31,6 +31,8 @@ import { AngularFirestore} from '@angular/fire/firestore';
 import { CrudService } from './services/crud.service';
 import { ListacliComponent } from './components/listacli/listacli.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { ModalComponent } from './components/modal/modal.component';
     CarritoComponent,
     ListadeseoComponent,
     ListacliComponent,
-    ModalComponent
+    ModalComponent,
+    FiltroPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

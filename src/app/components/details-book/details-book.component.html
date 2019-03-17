@@ -1,3 +1,33 @@
-<p>
-  details-book works!
-</p>
+<section id="producto">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_book">
+          <div class="card">
+            <div class="card-body text-center">
+              <p><img class="img-fluid" src="{{product.imagenPrincipal}}" alt="{{product.name}}"></p>
+              <h4 class="card-title">{{product.name}}</h4>
+              <p class="card-text">
+                {{product.category}}
+              </p>
+              <p class="card-text">
+                  Precio: {{product.price}}
+                </p>
+                <p class="card-text">
+                    Descripcion: {{product.descripcion}}
+                  </p>
+                  <p class="card-text">
+                      Apreciacion: {{product.apreciacion}}
+                    </p>
+                    <p class="card-text">
+                        Disponibles: {{product.disponibles}}
+                      </p>
+              <a href="" class="btn btn-block btn-warning">Añadir al Carrito</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

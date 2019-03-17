@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NgForm } from '@angular/forms';
+import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +11,16 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService, private afsAuth: AngularFireAuth) { }
+  constructor(private authService: AuthService, private afsAuth: AngularFireAuth, private crud:CrudService) { }
   public app_name: string = 'BookStore';
   public isLogged: boolean = false;
+  public filtroProduct:string;
+ 
+  
   ngOnInit() {
     this.getCurrentUser();
   }
-
+ 
   getCurrentUser(){
     this.authService.isAuth().subscribe( auth => {
       if(auth){
@@ -31,5 +36,10 @@ export class NavbarComponent implements OnInit {
   onLogout(){
     this.afsAuth.auth.signOut();
   }
+
+
+
+  
+
 
 }
