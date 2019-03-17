@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { DetailsBookComponent } from './components/details-book/details-book.component';
 import { ListBooksComponent } from './components/admin/list-books/list-books.component';
+import { ListUsersComponent } from './components/admin/list-users/list-users.component';
 import { LoginComponent } from './components/users/login/login.component';
 import { RegisterComponent } from './components/users/register/register.component';
 import { ProfileComponent } from './components/users/profile/profile.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
-    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa
+    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa!
+    { path: 'listuser', component: ListUsersComponent}, 
   ], component: AdminNavigationComponent
 
   },

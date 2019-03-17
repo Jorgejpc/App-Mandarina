@@ -9,5 +9,6 @@ export class Producto{
     disponibles?:number;
     promocion?:boolean;
     oferta?:boolean;
+    userUid?:string;
 
 }
