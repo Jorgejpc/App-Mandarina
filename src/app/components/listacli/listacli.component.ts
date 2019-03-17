@@ -13,6 +13,7 @@ export class ListacliComponent implements OnInit {
   
   public filtroProduct= '';
   public alpha=0;
+  public beta=0;
   public products= [];
 
    public product= ''; 
@@ -29,5 +30,9 @@ export class ListacliComponent implements OnInit {
   this.alpha=a;
   console.log(this.alpha);
   }
+  setBeta(a:number){
+    this.beta=a;
+    console.log(this.beta);
+    }
 
 }

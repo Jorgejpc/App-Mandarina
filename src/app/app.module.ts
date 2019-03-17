@@ -33,6 +33,7 @@ import { ListacliComponent } from './components/listacli/listacli.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import { PricesPipe } from './pipes/prices.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SortPipe } from './pipes/sort.pipe';
     ListacliComponent,
     ModalComponent,
     FiltroPipe,
-    SortPipe
+    SortPipe,
+    PricesPipe
   ],
   imports: [
     BrowserModule,
