@@ -23,10 +23,10 @@
             <td>{{user.email}}</td>
             <td>{{user.name}}</td>
             <td>{{user.password}}</td>
-            <td>{{user.roles.admin}}</td>
-            <td>{{user.roles.inhabilitado}}</td>
-            <td><button class="btn btn-warning" (click)="onPreUpdateProduct(product)"  data-toggle="modal" data-target="#modaluser">Modificar</button></td>
-            <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
+            <td>{{user.roles.admin == 1 ? 'Si' : 'No'}}</td>
+            <td>{{user.roles.inhabilitado == 1 ? 'Si' : 'No'}}</td>
+            <td><button class="btn btn-warning" data-toggle="modal" data-target="#modaluser" (click)="onPreUpDateUser(user)">Modificar</button></td>
+            <td><button class="btn btn-danger" (click)="onDeleteUser(user.id)">Borrar</button></td>
           </tr>
         </tbody>
       </table>

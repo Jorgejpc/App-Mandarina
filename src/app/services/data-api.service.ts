@@ -18,7 +18,11 @@ export class DataApiService {
   private users: Observable<UserInterface[]>;
   private userDoc: AngularFirestoreDocument<UserInterface>;
   private user: Observable<UserInterface>;
-  public selectedUser: Roles = {};
+  public selectedUser: UserInterface = {
+    id: null,
+    roles: {
+    },
+  };
 
   getAllUsers(){
     return this.users = this.usersCollection.snapshotChanges()

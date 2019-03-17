@@ -23,8 +23,16 @@ export class ListUsersComponent implements OnInit {
     })
   }
 
-  onDeleteUser(){
-    console.log('DELETE USER');
+  onDeleteUser(idUser: string): void{
+    const confirmacion = confirm('El usuario sera eliminado, esta seguro?');
+    if(confirmacion){
+      this.dataApi.deleteUser(idUser);  
+    }
+  }
+
+  onPreUpDateUser(user: UserInterface){
+    console.log('USER', user);
+    this.dataApi.selectedUser = Object.assign({}, user);
   }
   
 }
