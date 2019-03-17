@@ -9,8 +9,8 @@ export class PricesPipe implements PipeTransform {
 
   transform(value:Array<any>, reverse:number):Array<any> {
 
-    if(reverse==1){return _.sortBy(value, function(item){ return item.price;}).reverse();
-    }else if(reverse==2){ return _.sortBy(value, function(item){ return item.price;});}
+    if(reverse==1){return _.sortBy(value, function(item){ return item.price;});
+    }else if(reverse==2){ return _.sortBy(value, function(item){ return item.price;}).reverse();}
     else{
       return value;
     }

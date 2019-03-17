@@ -36,6 +36,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { PricesPipe } from './pipes/prices.pipe';
 import { ListUsersComponent } from './components/admin/list-users/list-users.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
