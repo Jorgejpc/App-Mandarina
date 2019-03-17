@@ -7,8 +7,7 @@
       </div>
       <div class="modal-body">
         <form name="formProduct" #formProduct="ngForm" (ngSubmit)="onSaveProduct(formProduct)"> 
-          <input type="text" name="id" [(ngModel)]= "this.service.selectedProduct.id">
-          <div class="form-group">
+                  <div class="form-group">
             <label for="name" class="col-form-label">Nombre:</label>
             <input type="text" class="form-control" name="name" [(ngModel)]="this.service.selectedProduct.name">
           </div>
