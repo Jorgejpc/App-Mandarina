@@ -14,7 +14,9 @@ export class ProfileComponent implements OnInit {
     name: '',
     email: '',
     photoUrl: '',
-    roles: {}
+    admin: null,
+    inhabilitado: null,
+    
   };
   
   public providerId: string = 'null';

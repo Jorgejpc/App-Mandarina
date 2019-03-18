@@ -54,10 +54,10 @@ export class AuthService {
     const data: UserInterface = {
       id: user.uid,
       email: user.email,
-      roles: {
-        admin: false,
-        inhabilitado: false
-      }
+      
+        admin: false,  //Aqui se inicializan los roles
+        inhabilitado: false 
+      
     }
     return userRef.set(data, { merge: true })
   }
