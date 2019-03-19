@@ -4,6 +4,6 @@ export interface UserInterface {
     email?: string;
     password?: string;
     photoUrl?: string;
-    inhabilitado?: boolean;
-    admin?: boolean;
+    inhabilitado?: string;
+    admin?: string;
 }

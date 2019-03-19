@@ -13,9 +13,8 @@ export class ProfileComponent implements OnInit {
   user: UserInterface = {
     name: '',
     email: '',
-    photoUrl: '',
-    admin: null,
-    inhabilitado: null,
+    admin: '',
+    inhabilitado: '',
     
   };
   

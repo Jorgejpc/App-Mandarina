@@ -45,7 +45,7 @@ export class CrudService {
   getOneProduct( idProduct: string){
     this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
     return this.product = this.productDoc.snapshotChanges()
-    .pipe(map(action=>{
+    .pipe(map(action=>{action.payload.data()
       if(action.payload.exists == false){
         return null;
       } else{
@@ -53,7 +53,6 @@ export class CrudService {
         data.id = action.payload.id;
         return data;
       }
-
     }));
   }
 

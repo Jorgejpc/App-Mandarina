@@ -33,6 +33,7 @@ export class DataApiService {
       });
     }));
   }
+  
   addUser(user: UserInterface): void {
     this.usersCollection.add(user);
   }
