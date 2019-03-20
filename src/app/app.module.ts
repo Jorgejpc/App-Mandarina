@@ -35,6 +35,7 @@ import { FiltroPipe } from './pipes/filtro.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { PricesPipe } from './pipes/prices.pipe';
 import { ListUsersComponent } from './components/admin/list-users/list-users.component';
+import { CategoryPipe } from './pipes/category.pipe';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ListUsersComponent } from './components/admin/list-users/list-users.com
     FiltroPipe,
     SortPipe,
     PricesPipe,
-    ListUsersComponent
+    ListUsersComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,

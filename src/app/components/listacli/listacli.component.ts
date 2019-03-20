@@ -12,6 +12,7 @@ export class ListacliComponent implements OnInit {
   constructor(private productService: CrudService) { }
   
   public filtroProduct= '';
+  public catProduct= '';
   public alpha=0;
   public beta=0;
   public products= [];

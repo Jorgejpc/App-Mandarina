@@ -1,8 +1,18 @@
 <section id="books">
-      <div class="container">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Buscar Nombre" name="filtroProduct" [(ngModel)]="filtroProduct">
+      <div class="d-flex flex-row">
+      <div class="form-group container">
+        <input type="text" placeholder="Buscar Nombre" name="filtroProduct" [(ngModel)]="filtroProduct">
       </div>
+      <div class="form-group col-md-6 d-flex flex-row">
+        <label class="float-left" for="catProduct">Categorías:  </label>
+        <select name="catProduct" class="form-control" [(ngModel)]="this.catProduct">
+          <option value="Sala">Sala</option>
+            <option value="Decoracion">Decoracion</option>
+            <option value="Electrodomesticos">Electrodomesticos</option>
+            <option value="Entretenimiento">Entretenimiento</option>
+        </select>
+    </div>
+      
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Alph
@@ -12,6 +22,7 @@
           <button class="dropdown-item" type="button" (click)="setAlpha(2)">Desc</button>
         </div>       
       </div>
+      
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Price
@@ -20,19 +31,19 @@
           <button class="dropdown-item" type="button" (click)="setBeta(1)">Asc</button>
           <button class="dropdown-item" type="button" (click)="setBeta(2)">Desc</button>
         </div>       
-      </div>
+    </div>
       
     </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
         <div class="card_book">
           <div class="card">
             <div class="card-body text-center">
               <p>
                 <img class="img-fluid" src="{{item.imagenPrincipal}}" alt="{{item.name}}">
               </p>
-              <h4 [routerLink]="['/producto', item.id]" class="card-title">{{item.name}}</h4>
+              <h4  class="card-title">{{item.name}}</h4>
               <p class="card-text">
                 {{item.descripcion}}
               </p>
@@ -44,7 +55,7 @@
                   {{item.apreciacion}}
                 </p>
               </div>
-              <a href="" class="btn btn-block btn-primary" target="_blank">Buy</a>
+              <a href="" class="btn btn-block btn-primary" [routerLink]="['/producto', item.id]">Detalles</a>
             </div>
           </div>
         </div>
