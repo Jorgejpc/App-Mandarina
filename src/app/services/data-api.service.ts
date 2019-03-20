@@ -13,7 +13,9 @@ export class DataApiService {
   constructor(private afs: AngularFirestore) { 
     this.usersCollection = afs.collection<UserInterface>('users')
     this.users = this.usersCollection.valueChanges();
+    
   }
+
   private usersCollection: AngularFirestoreCollection<UserInterface>;
   private users: Observable<UserInterface[]>;
   private userDoc: AngularFirestoreDocument<UserInterface>;
@@ -41,5 +43,4 @@ export class DataApiService {
     this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
     this.userDoc.delete();
   }
-
 }
