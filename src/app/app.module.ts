@@ -30,12 +30,14 @@ import { ListadeseoComponent } from './components/listadeseo/listadeseo.componen
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CrudService } from './services/crud.service';
 import { ListacliComponent } from './components/listacli/listacli.component';
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from './components/modals/modal/modal.component';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import { PricesPipe } from './pipes/prices.pipe';
 import { ListUsersComponent } from './components/admin/list-users/list-users.component';
 import { CategoryPipe } from './pipes/category.pipe';
+import { ModaluserComponent } from './components/modals/modaluser/modaluser.component';
+
 
 
 @NgModule({
@@ -64,7 +66,8 @@ import { CategoryPipe } from './pipes/category.pipe';
     SortPipe,
     PricesPipe,
     ListUsersComponent,
-    CategoryPipe
+    CategoryPipe,
+    ModaluserComponent
   ],
   imports: [
     BrowserModule,

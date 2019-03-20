@@ -21,6 +21,10 @@ export class DataApiService {
   private users: Observable<UserInterface[]>;
   private userDoc: AngularFirestoreDocument<UserInterface>;
   private user: Observable<UserInterface>;
+  public selectedUser: UserInterface = {
+    id: null
+    
+  };
 
   getAllUsers(){
     return this.users = this.usersCollection.snapshotChanges()
@@ -32,6 +36,7 @@ export class DataApiService {
       });
     }));
   }
+  
   addUser(user: UserInterface): void {
     this.usersCollection.add(user);
   }

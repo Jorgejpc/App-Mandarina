@@ -1,38 +1,38 @@
 <div class="container">
-<section class="row mt-5">
-  <div class="col">
-     <button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modalProduct">Nuevo Usuario</button>
-    <table class="table table-hover">
-      <thead>
-        <tr></tr>
-        <th>#</th>
-        <th>FotoPerfil</th>
-        <th>ID</th>
-        <th>Email</th>
-        <th>Nombre</th>
-        <th>Contraceña</th>
-        <th>Admin</th>
-        <th>Inhabilitar</th>
- 
-      </thead>
-      <tbody>
-        <tr *ngFor= "let user of users; index as i">
-          <th scope="row">{{i+1}}</th>
-          <td><img width="70" height="70" class=" rounded-circle" src="{{user.photoUrl}}" alt="{{user.photoUrl}}"></td> 
-          <td>{{user.id}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.password}}</td>
-          <td>{{user.roles.admin}}</td>
-          <td>{{user.roles.inhabilitado}}</td>
-          <td><button class="btn btn-warning" (click)="onPreUpdateProduct(product)"  data-toggle="modal" data-target="#modalProduct">Modificar</button></td>
-          <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
- </section>
-  
-<app-modal></app-modal>
+  <section class="row mt-2 ">
+    <div>
+      <button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modaluser">Nuevo Usuario</button>
+      {{isAdmin}}
+      <table class="table table-hover">
+        <thead>
+          <tr></tr>
+          <th>#</th>
+          <th>FotoPerfil</th>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Nombre</th>
+          <th>Contraceña</th>
+          <th>Admin</th>
+          <th>Inhabilitar</th>
+          <th></th>
 
+        </thead>
+        <tbody>
+          <tr *ngFor= "let user of users; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td><img width="70" height="70" class=" rounded-circle" src="{{user.photoUrl}}" alt="{{user.photoUrl}}"></td> 
+            <small><td>{{user.id}}</td></small>
+            <td>{{user.email}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.admin == 'true' ? 'Si' : 'No'}}</td>
+            <td>{{user.inhabilitado == 'true' ? 'Si' : 'No'}}</td>
+            <td><button class="btn btn-warning" (click)="onPreUpDateUser(user)" data-toggle="modal" data-target="#modaluser" >Modificar</button></td>
+            <td><button class="btn btn-danger" (click)="onDeleteUser(user.id)">Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   </section>
+  <app-modaluser></app-modaluser>
 </div>

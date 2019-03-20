@@ -1,12 +1,18 @@
-<section id="login" class="mb-5 mt-5">
+<section id="login" class="mb-5 mt-1">
   <div class="container">
     <div class="row">
+
       <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
         <div class="card_login">
-          <div class="card">
+          <div class="card login">
             <div class="card-body text-center">
               <form #formLogin="ngForm" (submit)= "onLogin()">
-                <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Login</h1>
+
+                <div class="row ml-4">
+                  <img width="70" height="70" class="rounded-circle mt-1 mb-4 mr-2" src="assets/img/naranjita.png" alt="assets/img/naranjita.png">
+                  <h1 class="mb-3 mt-2 font-weight-normal" *ngIf="!isError">Login</h1> 
+                </div>
+
                 <div class="alert alert-danger" role="alert" *ngIf="isError">
                   Something is wrong!
                 </div>
@@ -18,7 +24,7 @@
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
                 <div class="form-group">
-                  <a routerLink="/user/register" class="form-control login-user">Are you new ?</a>
+                  <a routerLink="/user/register" class="login form-control login-user">Are you new ?</a>
                 </div>
                 <div class="form-group">
                   <button class="btn btn-block btn-social btn-facebook" (click)="onLoginFacebook()">
@@ -30,7 +36,9 @@
                     GOOGLE
                   </button>
                 </div>
-                <a href=""(click)="onLogout">SALIR</a>
+                <div class="login">
+                  <a href=""(click)="onLogout">SALIR</a>
+                </div>
               </form>
             </div>
           </div>

@@ -13,8 +13,9 @@ export class ProfileComponent implements OnInit {
   user: UserInterface = {
     name: '',
     email: '',
-    photoUrl: '',
-    roles: {}
+    admin: '',
+    inhabilitado: '',
+    
   };
   
   public providerId: string = 'null';
