@@ -3,6 +3,8 @@ import { AuthService } from '../../services/auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NgForm } from '@angular/forms';
 import { CrudService } from 'src/app/services/crud.service';
+import { DataApiService } from 'src/app/services/data-api.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +13,13 @@ import { CrudService } from 'src/app/services/crud.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService, private afsAuth: AngularFireAuth, private crud:CrudService) { }
+  constructor(private authService: AuthService, private afsAuth: AngularFireAuth, private crud:CrudService, private admin: DataApiService) { }
   public app_name: string = 'BookStore';
   public isLogged: boolean = false;
+  public isAdmin: any;
   public filtroProduct:string;
  
-  
+
   ngOnInit() {
     this.getCurrentUser();
   }
@@ -24,8 +27,12 @@ export class NavbarComponent implements OnInit {
   getCurrentUser(){
     this.authService.isAuth().subscribe( auth => {
       if(auth){
-        console.log('user logged');
+        console.log('user logged', auth);
         this.isLogged = true; 
+        this.admin.getOneAdmin(auth.uid).subscribe(data=>{
+          this.isAdmin=data;
+          console.log(data,'algo paa que se distinga')
+        })
       } else {
         console.log('NOT user logged')
         this.isLogged = false; 
@@ -33,13 +40,14 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+
   onLogout(){
     this.afsAuth.auth.signOut();
   }
 
 
 
-  
+
 
 
 }

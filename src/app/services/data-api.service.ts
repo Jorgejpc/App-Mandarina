@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { UserInterface } from '../models/user';
 import { Observable } from 'rxjs/internal/observable';
 import { map } from 'rxjs/operators';
+import { User } from 'firebase';
 
 
 @Injectable({
@@ -10,10 +11,8 @@ import { map } from 'rxjs/operators';
 })
 export class DataApiService {
 
-
-
   constructor(private afs: AngularFirestore) { 
-    this.usersCollection = afs.collection<UserInterface>('users')
+    this.usersCollection = afs.collection<UserInterface>('users');
     this.users = this.usersCollection.valueChanges();
   }
 
@@ -23,7 +22,7 @@ export class DataApiService {
   private user: Observable<UserInterface>;
   public selectedUser: UserInterface = {
     id: null
-    
+
   };
 
   getAllUsers(){
@@ -36,11 +35,13 @@ export class DataApiService {
       });
     }));
   }
-  
+
   addUser(user: UserInterface): void {
     this.usersCollection.add(user);
   }
+
   updateUser(user: UserInterface): void {
+
     let idUser = user.id;
     this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
     this.userDoc.update(user);
@@ -49,4 +50,20 @@ export class DataApiService {
     this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
     this.userDoc.delete();
   }
+
+  getOneAdmin( idUser: string){
+    this.userDoc= this.afs.doc<UserInterface>(`users/${idUser}`);
+    return this.userDoc.snapshotChanges()
+    .pipe(map(action=>{action.payload.data()
+      console.log(action.payload.data())
+        const data = action.payload.data() as UserInterface;
+        return data.admin;
+    }));
+  }
+
 }
+
+
+
+
+
