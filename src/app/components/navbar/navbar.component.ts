@@ -13,10 +13,16 @@ import { DataApiService } from 'src/app/services/data-api.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService, private afsAuth: AngularFireAuth, private crud:CrudService, private admin: DataApiService) { }
+  constructor(private authService: AuthService, 
+    private afsAuth: AngularFireAuth, 
+    private crud:CrudService, 
+    private admin: DataApiService, 
+    private inhabilitado: DataApiService) { }
+    
   public app_name: string = 'BookStore';
   public isLogged: boolean = false;
   public isAdmin: any;
+  public isinhabilitado: any;
   public filtroProduct:string;
  
 
@@ -31,7 +37,11 @@ export class NavbarComponent implements OnInit {
         this.isLogged = true; 
         this.admin.getOneAdmin(auth.uid).subscribe(data=>{
           this.isAdmin=data;
-          console.log(data,'algo paa que se distinga')
+          console.log('El usuario es admin:',data);
+        })
+        this.inhabilitado.getOneinhabilitado(auth.uid).subscribe(data=>{
+          this.isinhabilitado=data;
+          console.log('El usuario esta inhabilitado:',data);
         })
       } else {
         console.log('NOT user logged')
@@ -42,6 +52,7 @@ export class NavbarComponent implements OnInit {
 
 
   onLogout(){
+    
     this.afsAuth.auth.signOut();
   }
 

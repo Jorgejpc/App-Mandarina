@@ -22,7 +22,7 @@
                     <p class="card-text">
                         Disponibles: {{product.disponibles}}
                       </p>
-              <a href="" class="btn btn-block btn-warning">Añadir al Carrito</a>
+              <button class="btn btn-block btn-warning" (click)="this._service.mandarCarrito(idUser, product)">Añadir al Carrito</button>
             </div>
 
           </div>

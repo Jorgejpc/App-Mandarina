@@ -4,6 +4,7 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Producto } from '../models/producto';
+import { UserInterface } from '../models/user';
 
 
 @Injectable({
@@ -16,6 +17,7 @@ export class CrudService {
   constructor(private afs: AngularFirestore) {
     this.productCollection = afs.collection<Producto>('products');
     this.products = this.productCollection.valueChanges();
+    this.db=afs.collection<UserInterface>('users');
 
    }
 
@@ -27,6 +29,7 @@ export class CrudService {
   public selectedProduct: Producto ={
     id:null
   };
+  private db:AngularFirestoreCollection<UserInterface>;
   
 
 
@@ -71,6 +74,11 @@ export class CrudService {
     this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
     this.productDoc.delete();
   }
+
+  mandarCarrito(idUser:any, idProduct:Producto){
+    //var messageRefi = this.db.collection('products').doc(this.iProduct);
+    var messageRef = this.db.doc(idUser).collection('carrito').add(idProduct);
+}
 
  
 
