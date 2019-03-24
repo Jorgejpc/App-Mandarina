@@ -14,6 +14,9 @@ import { AdminNavigationComponent } from './navigations/admin-navigation/admin-n
 import { AdminComponent } from './views/admin/admin.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListadeseoComponent } from './components/listadeseo/listadeseo.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthadminGuard } from './guards/authadmin.guard';
+import { AuthloginGuard } from './guards/authlogin.guard';
 
 const routes: Routes = [
   { path: '', children:[
@@ -21,16 +24,16 @@ const routes: Routes = [
     { path: 'offers', component: OffersComponent},
     { path: 'producto/:id', component: DetailsBookComponent}, 
     { path: 'user/login', component: LoginComponent},
-    { path: 'user/register', component: RegisterComponent},
-    { path: 'user/profile', component: ProfileComponent},
-    { path: 'carrito', component: CarritoComponent},
-    { path: 'listadeseo', component: ListadeseoComponent}
+    { path: 'user/register', component: RegisterComponent, /*canActivate: [AuthloginGuard]*/},
+    { path: 'user/profile', component: ProfileComponent, canActivate: [AuthGuard]}, 
+    { path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
+    { path: 'listadeseo', component: ListadeseoComponent, canActivate: [AuthGuard]}
   ], component: MainNavigationComponent 
   },
   {path:'admin', children:[
-    { path: '', component: AdminComponent},
-    { path: 'listbook', component: ListBooksComponent}, //Esta es tu lista rafa!
-    { path: 'listuser', component: ListUsersComponent}, 
+    { path: '', component: AdminComponent,  canActivate: [AuthadminGuard] },
+    { path: 'listbook', component: ListBooksComponent,  canActivate: [AuthadminGuard], }, //Esta es tu lista rafa!
+    { path: 'listuser', component: ListUsersComponent,  canActivate: [AuthadminGuard] }, 
   ], component: AdminNavigationComponent
 
   },
