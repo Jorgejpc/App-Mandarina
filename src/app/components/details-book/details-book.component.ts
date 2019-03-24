@@ -28,7 +28,7 @@ export class DetailsBookComponent implements OnInit {
   ngOnInit() {
     const idProduct = this.ruta.snapshot.params['id'];
     this.getDetails(idProduct);
-    this.getCurrentUser();
+    
     
   }
   getDetails(idProduct: string ): void{
@@ -41,13 +41,6 @@ export class DetailsBookComponent implements OnInit {
     })
   }
 
-  getCurrentUser(){
-    this.authService.isAuth().subscribe( auth => {
-      if(auth){
-        this.idUser=auth.uid
-        }        
-      }) 
-    }
 
    
 }

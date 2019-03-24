@@ -23,7 +23,7 @@ export class ListacliComponent implements OnInit {
     this.productService.getProducts().subscribe(products=>{
       this.products = products;
 
-    })
+    });
    
   }
 

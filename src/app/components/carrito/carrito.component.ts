@@ -21,8 +21,11 @@ export class CarritoComponent implements OnInit {
   public products:Producto[];
 
   ngOnInit() {
-  }
-  getCarrito(){
+  
+    this.servicioCarrito.getCarrito().subscribe(carrito=>{
+    this.products = carrito;
+
+  });
   
 
   }
