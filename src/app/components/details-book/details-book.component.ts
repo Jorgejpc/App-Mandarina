@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 import { Producto } from 'src/app/models/producto';
 import { ActivatedRoute, Params} from '@angular/router';
+import { DataApiService } from 'src/app/services/data-api.service';
 
 @Component({
   selector: 'app-details-book',
@@ -12,7 +13,8 @@ export class DetailsBookComponent implements OnInit {
 
   constructor(
     private ruta: ActivatedRoute,
-    private _service: CrudService) { }
+    private _service: CrudService,
+    private data: DataApiService) { }
 
   public product:Producto;
 
@@ -27,7 +29,13 @@ export class DetailsBookComponent implements OnInit {
       this.product = product;
 
 
+
     })
+  }
+
+  addCarrito(): void{
+     
+
   }
 
 }

@@ -38,15 +38,30 @@ export class DataApiService {
   }
   
   addUser(user: UserInterface): void {
+    user.carrito=[];
     this.usersCollection.add(user);
   }
   updateUser(user: UserInterface): void {
     let idUser = user.id;
     this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
     this.userDoc.update(user);
+    this.userDoc.update(user);
   }
   deleteUser(idUser: string): void{
     this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
     this.userDoc.delete();
+  }
+  getOneUser( idUser: string){
+    this.userDoc = this.afs.doc<UserInterface>(`users/${idUser}`);
+    return this.user = this.userDoc.snapshotChanges()
+    .pipe(map(action=>{action.payload.data()
+      if(action.payload.exists == false){
+        return null;
+      } else{
+        const data = action.payload.data() as UserInterface;
+        data.id = action.payload.id;
+        return data;
+      }
+    }));
   }
 }

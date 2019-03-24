@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     .then( (res)=>{
       this.onLoginRedirect();
     }).catch ( err => console.log('err', err.menssage)) 
+    
   }
 
   onLoginGoogle(): void{

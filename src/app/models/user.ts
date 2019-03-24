@@ -6,4 +6,5 @@ export interface UserInterface {
     photoUrl?: string;
     inhabilitado?: string;
     admin?: string;
+    carrito?: object[];
 }

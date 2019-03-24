@@ -10,5 +10,5 @@ export class Producto{
     promocion?:boolean;
     oferta?:boolean;
     userUid?:string;
-
+    comentarios?:string[];
 }

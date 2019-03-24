@@ -57,6 +57,7 @@ export class CrudService {
   }
 
   insertProduct(product: Producto): void{
+    product.comentarios=[];
     this.productCollection.add(product);
   }
 

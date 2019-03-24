@@ -37,6 +37,7 @@ import { PricesPipe } from './pipes/prices.pipe';
 import { ListUsersComponent } from './components/admin/list-users/list-users.component';
 import { CategoryPipe } from './pipes/category.pipe';
 import { ModaluserComponent } from './components/modals/modaluser/modaluser.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 
 
@@ -67,7 +68,8 @@ import { ModaluserComponent } from './components/modals/modaluser/modaluser.comp
     PricesPipe,
     ListUsersComponent,
     CategoryPipe,
-    ModaluserComponent
+    ModaluserComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,
