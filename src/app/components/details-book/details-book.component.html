@@ -1,33 +1,56 @@
-<section id="producto">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card_book">
-          <div class="card">
-            <div class="card-body text-center">
-              <p><img class="img-fluid" src="{{product.imagenPrincipal}}" alt="{{product.name}}"></p>
-              <h4 class="card-title">{{product.name}}</h4>
-              <p class="card-text">
-                {{product.category}}
-              </p>
-              <p class="card-text">
-                  Precio: {{product.price}}
-                </p>
-                <p class="card-text">
-                    Descripcion: {{product.descripcion}}
-                  </p>
-                  <p class="card-text">
-                      Apreciacion: {{product.apreciacion}}
-                    </p>
-                    <p class="card-text">
-                        Disponibles: {{product.disponibles}}
-                      </p>
-              <button class="btn btn-block btn-warning" (click)="this._service.mandarCarrito(product)">Añadir al Carrito</button>
-            </div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+	
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{product.imagenPrincipal}}"width="400" height="400" /></div>
+						</div>
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{product.name}}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">{{product.apreciacion}}</span> <!------ Esto se deberia de ver abajo de las estrellas----->
+						</div>
+						<p class="product-description">Descripcion: {{product.descripcion}}</p>
+						<h4 class="price">Precio: <span>${{product.price}}</span></h4>
+						<h5 class="sizes">Disponibles en Stock: {{product.disponibles}}</h5>
+						<h5 class="colors">Categoria: {{product.category}}</h5>
+						<div class="action">
+              <button class="add-to-cart btn btn-default" (click)="this._service.mandarCarrito(product)">Añadir al Carrito</button>
+              <button class="add-to-list btn btn-default" (click)="this._service.mandarCarrito(product)">Añadir a la lista</button>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
