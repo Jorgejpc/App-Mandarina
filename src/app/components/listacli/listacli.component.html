@@ -36,24 +36,24 @@
     </div>
 <!---->
     <div class="container">
-      <h3 class="h3">shopping Demo-3 </h3>
+      <h3 class="h3"></h3>
       <div class="row">
-          <div class="col-md-3 col-sm-6" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
+          <div class="col-md-3 col-sm-6 mb-3" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
               <div class="product-grid3">
                   <div class="product-image3">
-                      <a href="#">
+                      <a href="" [routerLink]="['/producto', item.id]" >
                           <img class="pic-1 img-fluid" src="{{item.imagenPrincipal}}">
                           <img class="pic-2 img-fluid" src="{{item.imagenPrincipal}}">
                       </a>
                       <ul class="social">
-                          <li><a href="" [routerLink]="['/producto', item.id]"><i class="fa fa-eye"></i></a></li>
-                          <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                          <li><a href="#"><i class="fa fa-shopping-cart" ></i></a></li>
+                     <!---      <li><a href=""><i class="fa fa-eye" [routerLink]="['/producto', item.id]"></i></a></li>-->
+                          <li><a href="#aa"><i class="fa fa-shopping-bag"></i></a></li>
+                          <li><a href="#bb"><i class="fa fa-shopping-cart" ></i></a></li>
                       </ul>
                      <!--- <span class="product-new-label">New</span>  -->
                   </div>
                   <div class="product-content">
-                      <h1 class="title"><a href="#">{{item.name}}</a></h1>
+                      <h1 class="title"><a href="#ss">{{item.name}}</a></h1>
                       <div class="price">
                           {{item.price}}$
                          
