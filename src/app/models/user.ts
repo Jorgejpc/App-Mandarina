@@ -6,5 +6,12 @@ export interface UserInterface {
     photoUrl?: string;
     inhabilitado?: string;
     admin?: string;
-    carrito?: object[];
+    carrito?: object[],
+
+    firstnames?: string;
+    lastnames?: string;
+    estado?: string;
+    direccion?: string;
+    codigoPostal?: number; 
+    telefono?: number;
 }

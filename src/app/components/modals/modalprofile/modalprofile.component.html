@@ -1,0 +1,63 @@
+<div class="modal fade" id="modalprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+       
+      </div>
+      <div class="modal-body">
+        <form name="formProfile" #formProfile="ngForm" (ngSubmit)="onSaveProfile(formProfile)"> 
+          <input type="text" name="id" [(ngModel)]= "this.dataApi.selectedUser.id">
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <label for="firstnames" class="col-form-label">Nombres:</label>
+            <input type="text" class="form-control" name="firstnames" [(ngModel)]="this.dataApi.selectedUser.firstnames">
+          </div>
+          <div class=" form-group col-md-6">
+            <label for="lastnames" class="col-form-label">Apellidos:</label>
+            <input type="text" class="form-control" name="lastnames" [(ngModel)]="this.dataApi.selectedUser.lastnames">
+          </div>
+        </div>
+          <div class="form-row">
+            <div class="form-goup col-md-6">
+          <label for="estado">Estado: </label>
+          <select name="estado" class="form-control" [(ngModel)]="this.dataApi.selectedUser.estado">
+            <option value="null">Seleccione Estado</option>
+            <option value="Anzuategui">Anzuategui</option>
+            <option value="Apure">Apure</option>
+            <option value="Aragua">Aragua</option>
+            <option value="Barinas">Barinas</option>
+            <option value="Bolivar">Bolivar</option>
+            <option value="Carabobo">Carabobo</option>
+            <option value="Cojedes">Cojedes</option>
+            <option value="Delta Amacuro">Delta Amacuro</option>
+            <option value="Falcon">Falcon</option>
+            <option value="Lara">Lara</option>
+          </select>
+          </div>
+          <div class="form-group col-md-6">
+              <label for="direccion" class="col-form-label">Direccion:</label>
+              <input type="text" class="form-control" name="direccion" [(ngModel)]="this.dataApi.selectedUser.direccion">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="codigoPostal">Codigo Postal:</label>
+            <input type="number" name="codigoPostal" class="form-control" placeholder="C.P." [(ngModel)]="this.dataApi.selectedUser.codigoPostal">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="telefono">Telefono:</label>
+            <input type="number" name="telefono" class="form-control" placeholder="+58--- -------" [(ngModel)]="this.dataApi.selectedUser.telefono">  
+          </div>
+        </div>
+        
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-warning">Guardar</button>
+          </div>
+        </form>
+      </div>
+      
+  </div>
+</div>

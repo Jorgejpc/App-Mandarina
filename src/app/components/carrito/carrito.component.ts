@@ -23,7 +23,7 @@ export class CarritoComponent implements OnInit {
   ngOnInit() {
   
     this.servicioCarrito.getCarrito().subscribe(carrito=>{
-    this.products = carrito;
+    this.products = carrito; 
 
   });
   

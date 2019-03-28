@@ -10,8 +10,8 @@
         <li class="nav-item">
             <a class="nav-link" routerLink="/"><img class="img-responsive" src="assets/img/logo.png" width="50" height="50" class="d-inline-block align-top">
             </a>
-       
-      </li>
+
+           </li>
      
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -24,6 +24,12 @@
           <h5>Register</h5>
         </a>
       </li>
+      <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link" routerLink="/user/login">
+            <h5>Login</h5>
+          </a>
+        </li>
+        
       <li class="nav-item" *ngIf="isAdmin==='true'">
         <a class="nav-link" routerLink="/admin">
           <h5>Admin</h5>
@@ -38,11 +44,6 @@
       <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link" routerLink="/listadeseo"><img class="img-responsive" src="assets/img/lista.png" width="50" height="50" class="d-inline-block align-top"></a>
         </li>
-      <li class="nav-item" *ngIf="!isLogged">
-        <a class="nav-link" routerLink="/user/login">
-          <h5>Login</h5>
-        </a>
-      </li>
       <li class="nav-item" *ngIf="isLogged">
         <a href=" " class="nav-link" (click)="onLogout()"><img class="img-responsive" src="assets/img/logoud.png" width="50" height="50" class="d-inline-block align-top">
         </a>

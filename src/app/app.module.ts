@@ -38,6 +38,7 @@ import { ListUsersComponent } from './components/admin/list-users/list-users.com
 import { CategoryPipe } from './pipes/category.pipe';
 import { ModaluserComponent } from './components/modals/modaluser/modaluser.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { ModalprofileComponent } from './components/modals/modalprofile/modalprofile.component';
 
 
 
@@ -69,7 +70,8 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     ListUsersComponent,
     CategoryPipe,
     ModaluserComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    ModalprofileComponent,
   ],
   imports: [
     BrowserModule,
