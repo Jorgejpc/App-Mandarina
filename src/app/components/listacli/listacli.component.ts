@@ -9,7 +9,9 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class ListacliComponent implements OnInit {
 
-  constructor(private productService: CrudService) { }
+  constructor(
+    private productService: CrudService, 
+    private _service: CrudService) { }
   
   public filtroProduct= '';
   public catProduct= '';
@@ -34,6 +36,8 @@ export class ListacliComponent implements OnInit {
   setBeta(a:number){
     this.beta=a;
     console.log(this.beta);
-    }
+  }
+
+  
 
 }
