@@ -20,6 +20,8 @@ export class ListacliComponent implements OnInit {
   public products= [];
 
    public product= ''; 
+  
+  public isAdmin: any;
 
   ngOnInit() {
     this.productService.getProducts().subscribe(products=>{
