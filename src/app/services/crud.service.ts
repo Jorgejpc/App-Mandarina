@@ -27,6 +27,7 @@ export class CrudService {
   private productCollection: AngularFirestoreCollection<Producto>;
   private products: Observable<Producto[]>;
   private carrito: Observable<Producto[]>;
+  private WishList: Observable<Producto[]>;
   private productDoc: AngularFirestoreDocument<Producto>;
   private product: Observable<Producto>;
   public selectedProduct: Producto ={
@@ -83,6 +84,9 @@ export class CrudService {
   mandarCarrito(idProduct:Producto){
     var messageRef = this.db.doc(this.idUser).collection('carrito').add(idProduct);
 }
+mandarWishList(idProduct:Producto){
+  var messageRef = this.db.doc(this.idUser).collection('deseos').add(idProduct);
+}
 isAuth() {
   return this.afsAuth.authState.pipe(map(auth => auth));
 }
@@ -105,6 +109,27 @@ getCarrito(){
     })
 
   }));
+}
+getWishList(){
+  
+  return this.WishList = this.db.doc(this.idUser).collection('deseos').snapshotChanges()
+  .pipe(map(changes=>{
+    return changes.map(action =>{
+      const data = action.payload.doc.data() as Producto;
+      data.id = action.payload.doc.id;
+      return data;
+    })
+
+  }));
+}
+deleteProductCarrito(idProduct: string): void{
+  this.productDoc = this.afs.collection<UserInterface>('users').doc(this.idUser).collection('carrito').doc(idProduct);
+  this.productDoc.delete();
+}
+
+deleteProductDeseos(idProduct: string): void{
+  this.productDoc = this.afs.collection<UserInterface>('users').doc(this.idUser).collection('deseos').doc(idProduct);
+  this.productDoc.delete();
 }
  
 

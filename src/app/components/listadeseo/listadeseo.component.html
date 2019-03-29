@@ -1,3 +1,35 @@
-
-  listadeseo works!
-
+<div class="container">
+  <section class="row mt-2">
+    <div class="col">
+      <table style="background-color:rgb(235, 238, 84)" class="table table-hover">
+        <thead>
+          <tr></tr>
+          <th>#</th>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Categoria</th>
+          <th>Descripcion</th>
+          <th>Apreciacion</th>
+          <th>Disponibles</th>
+          <th></th>
+   
+        </thead>
+        <tbody style="background-color:rgb(252, 253, 185)">
+          <tr *ngFor= "let product of products; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td><img width="70" height="70" class=" rounded-circle" src="{{product.imagenPrincipal}}" alt="{{product.imagenPrincipal}}"></td> 
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.descripcion}}</td>
+            <td>{{product.apreciacion}}</td>
+            <td>{{product.disponibles}}</td>
+            <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+   </section>
+   <button class="btn btn-warning">Agregar al Carrito</button>
+    <app-modal></app-modal>
+  </div>

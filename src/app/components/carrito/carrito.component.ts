@@ -27,6 +27,11 @@ export class CarritoComponent implements OnInit {
 
   });
   
+  }
+  onDeleteProduct(id:any){
+    const confirmacion =  confirm('Estas seguro?');
+    if(confirmacion)
+    this.servicioCarrito.deleteProductCarrito(id);
 
   }
 }

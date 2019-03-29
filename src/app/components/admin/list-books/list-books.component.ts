@@ -35,7 +35,7 @@ onDeleteProduct(idProduct: string){
 
 onPreUpdateProduct(product: Producto){
   console.log('producto', product);
-this._servicio.selectedProduct = Object.assign({},product)
+this._servicio.selectedProduct = Object.assign({},product);
 
 }
  
