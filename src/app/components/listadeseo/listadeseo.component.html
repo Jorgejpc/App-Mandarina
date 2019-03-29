@@ -23,6 +23,7 @@
             <td>{{product.descripcion}}</td>
             <td>{{product.apreciacion}}</td>
             <td>{{product.disponibles}}</td>
+            <td><button class="btn btn-warning">Agregar al Carrito</button></td>
             <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
           </tr>
         </tbody>
@@ -30,6 +31,6 @@
     </div>
     
    </section>
-   <button class="btn btn-warning">Agregar al Carrito</button>
+   
     <app-modal></app-modal>
   </div>
