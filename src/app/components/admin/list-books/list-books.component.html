@@ -2,7 +2,7 @@
 <section class="row mt-2">
   <div class="col">
      <button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modalProduct">Nuevo Producto</button>
-    <table style="background-color:rgb(102, 175, 81)" class="table table-hover">
+    <table style="background-color:rgb(235, 238, 84)" class="table table-hover">
       <thead>
         <tr></tr>
         <th>#</th>
@@ -15,7 +15,7 @@
         <th></th>
  
       </thead>
-      <tbody style="background-color:rgb(185, 240, 197)">
+      <tbody style="background-color:rgb(252, 253, 185)">
         <tr *ngFor= "let product of products; index as i">
           <th scope="row">{{i+1}}</th>
           <td><img width="70" height="70" class=" rounded-circle" src="{{product.imagenPrincipal}}" alt="{{product.imagenPrincipal}}"></td> 

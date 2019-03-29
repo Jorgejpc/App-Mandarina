@@ -6,6 +6,9 @@ export class Producto{
     descripcion?:string;
     imagenPrincipal?:string;
     imagenSecundaria?:string;
+    imagenTercera?:String;
+    imagenCuarta?:String;
+    imagenQuinta?:String;
     apreciacion?:number;
     disponibles?:number;
     promocion?:boolean;
