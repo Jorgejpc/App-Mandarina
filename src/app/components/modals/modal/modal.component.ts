@@ -22,7 +22,6 @@ export class ModalComponent implements OnInit {
       this.service.updateProduct(productForm.value)
     }
   
-    productForm.resetForm();
     this.btnClose.nativeElement.click();
 
   }

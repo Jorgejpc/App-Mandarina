@@ -87,7 +87,7 @@
             <textarea class="form-control" name="descripcion"[(ngModel)]="this.service.selectedProduct.descripcion"></textarea>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal" (click)="formProduct.resetForm()">Close</button>
               <button type="submit" class="btn btn-warning">Guardar</button>
           </div>
         </form>

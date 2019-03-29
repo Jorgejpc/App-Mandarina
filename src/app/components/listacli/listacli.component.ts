@@ -32,10 +32,12 @@ export class ListacliComponent implements OnInit {
   }
 
   setAlpha(a:number){
+  this.beta=0;  
   this.alpha=a;
   console.log(this.alpha);
   }
   setBeta(a:number){
+    this.alpha=0;
     this.beta=a;
     console.log(this.beta);
   }

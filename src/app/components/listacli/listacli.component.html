@@ -6,7 +6,8 @@
       <div class="form-group col-md-6 d-flex flex-row">
         <label class="float-left" for="catProduct">Categorías:  </label>
         <select name="catProduct" class="form-control" [(ngModel)]="this.catProduct">
-          <option value="Sala">Sala</option>
+            <option value="">Todas</option>
+            <option value="Sala">Sala</option>
             <option value="Decoracion">Decoracion</option>
             <option value="Electrodomesticos">Electrodomesticos</option>
             <option value="Entretenimiento">Entretenimiento</option>
@@ -18,6 +19,7 @@
          Alph
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" (click)="setAlpha(0)">None</button>
           <button class="dropdown-item" type="button" (click)="setAlpha(1)">Asc</button>
           <button class="dropdown-item" type="button" (click)="setAlpha(2)">Desc</button>
         </div>       
@@ -28,6 +30,7 @@
          Price
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" (click)="setBeta(0)">None</button>
           <button class="dropdown-item" type="button" (click)="setBeta(1)">Asc</button>
           <button class="dropdown-item" type="button" (click)="setBeta(2)">Desc</button>
         </div>       
