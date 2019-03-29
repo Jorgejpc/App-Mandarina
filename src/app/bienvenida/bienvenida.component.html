@@ -1,11 +1,18 @@
 <div *ngIf="isLogged">
-  <div *ngIf="isInhabilitado==='true'">
-    <div class="row">
+    <div *ngIf="isInhabilitado==='true'">
+      <div class="row">
         <img class="img-responsive centrado mr-5" src="assets/img/bloqueado.png" width="60" height="60">
-      <h2><p style="color:rgb(255, 6, 6)" class="centrado mt-4">SU CUENTA HA SIDO INHABILITADA</p></h2> 
-      <img class="img-responsive centrado ml-5" src="assets/img/bloqueado.png" width="60" height="60">
+        <h2><p style="color:rgb(255, 6, 6)" class="centrado mt-4">SU CUENTA HA SIDO INHABILITADA</p></h2> 
+        <img class="img-responsive centrado ml-5" src="assets/img/bloqueado.png" width="60" height="60">
+      </div>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Cuenta Suspendida!</h4>
+        <p>Tu cuenta ha sido suspendida manualmente debido a incumplimientos de nustras politicas de comunidad.</p>
+        <hr>
+        <p class="mb-0">Para mayor información contactar con MandarinaDigital@gmail.com.</p>
+      </div>
     </div>
   </div>
-</div>
-
-<a class="nav-link" routerLink="/home"><img class="img-responsive" src="assets/img/bienvenida.png" width="1100" height="1000" class=""></a>
+  
+  <a class="nav-link" routerLink="/home"><img class="img-responsive" src="assets/img/bienvenida.png" width="1100" height="1000" class=""></a>
+  

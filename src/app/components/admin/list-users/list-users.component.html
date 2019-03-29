@@ -1,34 +1,34 @@
 <div class="container">
-  <section class="row mt-5 ">
-    <div class="col">
-  <!--<button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modaluser">Nuevo Usuario</button>-->
-      <table style="background-color:rgb(90, 164, 250)" class="table table-hover">
-        <thead>
-          <tr></tr>
-          <th>#</th>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Nombre</th>
-          <th>Admin</th>
-          <th>Inhabilitar</th>
-          <th></th>
-
-        </thead>
-        <tbody style="background-color:rgb(185, 211, 228)">
-          <tr *ngFor= "let user of users; index as i">
-            <th scope="row">{{i+1}}</th>
-          <!--- <td><img width="70" height="70" class=" rounded-circle" src="{{user.photoUrl}}" alt="{{user.photoUrl}}"></td> -->
-            <td>{{user.id}}</td>  <!---</small> -->
-            <td>{{user.email}}</td>
-            <td>{{user.firstnames}}</td>
-            <td class="text-center">{{user.admin == 'true' ? 'Si' : 'No'}}</td>
-            <td class="text-center">{{user.inhabilitado == 'true' ? 'Si' : 'No'}}</td>
-            <td><button class="btn btn-warning" (click)="onPreUpDateUser(user)" data-toggle="modal" data-target="#modaluser" >Modificar</button></td>
-        <!--<td><button class="btn btn-danger" (click)="onDeleteUser(user.id)">Borrar</button></td>-->
-          </tr>
-        </tbody>
-      </table>
-    </div>
-   </section>
-  <app-modaluser></app-modaluser>
-</div>
+    <section class="row mt-5 ">
+      <div class="col">
+    <!--<button class="btn btn-warning float-right mb-3" data-toggle="modal" data-target="#modaluser">Nuevo Usuario</button>-->
+        <table style="background-color:rgb(90, 164, 250)" class="table table-hover">
+          <thead>
+            <tr></tr>
+            <th class="text-center">#</th>
+            <th class="text-center">ID</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Admin</th>
+            <th class="text-center">Inhabilitar</th>
+            <th></th>
+  
+          </thead>
+          <tbody style="background-color:rgb(185, 211, 228)">
+            <tr *ngFor= "let user of users; index as i">
+              <th scope="row">{{i+1}}</th>
+            <!--- <td><img width="70" height="70" class=" rounded-circle" src="{{user.photoUrl}}" alt="{{user.photoUrl}}"></td> -->
+              <td>{{user.id}}</td>  <!---</small> -->
+              <td>{{user.email}}</td>
+              <td>{{user.firstnames}}</td>
+              <td class="text-center">{{user.admin == 'true' ? 'Si' : 'No'}}</td>
+              <td class="text-center">{{user.inhabilitado == 'true' ? 'Si' : 'No'}}</td>
+              <td><button class="btn btn-warning" (click)="onPreUpDateUser(user)" data-toggle="modal" data-target="#modaluser" >Modificar</button></td>
+          <!--<td><button class="btn btn-danger" (click)="onDeleteUser(user.id)">Borrar</button></td>-->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     </section>
+    <app-modaluser></app-modaluser>
+  </div>
