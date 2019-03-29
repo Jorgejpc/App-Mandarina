@@ -17,12 +17,14 @@ import { ListadeseoComponent } from './components/listadeseo/listadeseo.componen
 import { AuthGuard } from './guards/auth.guard';
 import { AuthadminGuard } from './guards/authadmin.guard';
 import { AuthloginGuard } from './guards/authlogin.guard';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 const routes: Routes = [
   { path: '', children:[
-    { path: '',  component: HomeComponent },
+    { path: '',  component: BienvenidaComponent, },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     { path: 'offers', component: OffersComponent},
-    { path: 'producto/:id', component: DetailsBookComponent}, 
+    { path: 'producto/:id', component: DetailsBookComponent, canActivate: [AuthGuard]}, 
     { path: 'user/login', component: LoginComponent},
     { path: 'user/register', component: RegisterComponent, /*canActivate: [AuthloginGuard]*/},
     { path: 'user/profile', component: ProfileComponent, canActivate: [AuthGuard]}, 

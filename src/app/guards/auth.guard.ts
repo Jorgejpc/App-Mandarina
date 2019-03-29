@@ -14,8 +14,10 @@ export class AuthGuard implements CanActivate {
   constructor(private afsAuth: AngularFireAuth,
      private router: Router, 
      private admin: DataApiService,
+     private inhabilitado: DataApiService,
      private authService: AuthService,) { }
 
+     public isInhabilitado: any;
      canActivate(
       next: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
@@ -27,8 +29,17 @@ export class AuthGuard implements CanActivate {
           console.log(auth);
           if (!auth) { //si no estas log 
             console.log(auth);
-            
             this.router.navigate(['user/login']);
+          }
+          else{ // si esta log
+            this.authService.isAuth().subscribe( auth => {
+              this.inhabilitado.getOneinhabilitado(auth.uid).subscribe(data=>{
+                this.isInhabilitado=data;
+                if(data=='true'){ //Si esta baneado
+                  this.router.navigate(['']);//mandalo a la bienbenida
+                }
+              })
+            });
           }
         }));
     }

@@ -2,12 +2,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ !this.service.selectedProduct.id ? 'Crear Libro' : 'Modificar'}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ !this.service.selectedProduct.id ? 'Nuevo Producto' : 'Modificar Producto'}}</h5>
        
       </div>
       <div class="modal-body">
         <form name="formProduct" #formProduct="ngForm" (ngSubmit)="onSaveProduct(formProduct)"> 
-          <input type="text" name="id" [(ngModel)]= "this.service.selectedProduct.id">
+          <input type="hidden" name="id" [(ngModel)]= "this.service.selectedProduct.id">
           <div class="form-group">
             <label for="name" class="col-form-label">Nombre:</label>
             <input type="text" class="form-control" name="name" [(ngModel)]="this.service.selectedProduct.name">

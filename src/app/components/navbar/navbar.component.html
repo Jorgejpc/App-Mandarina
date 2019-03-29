@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="mainNavbar">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" routerLink="/"><img class="img-responsive" src="assets/img/logo.png" width="50" height="50" class="d-inline-block align-top">
+            <a class="nav-link" routerLink="/home"><img class="img-responsive" src="assets/img/logo.png" width="50" height="50" class="d-inline-block align-top">
             </a>
 
            </li>
@@ -31,9 +31,7 @@
         </li>
         
       <li class="nav-item" *ngIf="isAdmin==='true'">
-        <a class="nav-link" routerLink="/admin">
-          <h5>Admin</h5>
-        </a>
+          <a class="nav-link" routerLink="/admin"><img class="img-responsive" src="assets/img/admin.png" width="50" height="50" class="d-inline-block align-top"></a>
       </li>
       <li class="nav-item" *ngIf="isLogged">
         <a class="nav-link" routerLink="/user/profile"><img class="img-responsive" src="assets/img/cuenta.png" width="50" height="50" class="d-inline-block align-top"></a>

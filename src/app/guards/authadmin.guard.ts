@@ -14,9 +14,11 @@ export class AuthadminGuard implements CanActivate {
   constructor(private afsAuth: AngularFireAuth,
     private router: Router, 
     private admin: DataApiService,
+    private inhabilitado: DataApiService,
     private authService: AuthService,) { }
 
     public isAdmin: any;
+    public isInhabilitado: any;
 
     canActivate(
      next: ActivatedRouteSnapshot,
@@ -29,18 +31,30 @@ export class AuthadminGuard implements CanActivate {
          if (!auth) { //si no esta loguado 
            this.router.navigate(['/user/login']);
          }
-         else{  // si esta logueado
+     // si esta logueado
+     this.authService.isAuth().subscribe( auth => {
+      this.inhabilitado.getOneinhabilitado(auth.uid).subscribe(data=>{
+        this.isInhabilitado=data;
+        if(data=='true'){ //Si esta baneado
+          console.log('data auth',data);
+          this.router.navigate(['']);//mandalo a la bienbenida
+        }
+        else{ //si no esta baneado
           this.authService.isAuth().subscribe( auth => {
-              console.log('a ver cuanto entro aqui');
-              
-              this.admin.getOneAdmin(auth.uid).subscribe(data=>{
-                this.isAdmin=data;
-                if(data=='false'){ //no es admin
-                  this.router.navigate(['']);
-                }
-              })
+            this.admin.getOneAdmin(auth.uid).subscribe(data=>{
+              this.isAdmin=data;
+              if(data=='false'){ //no es admin
+                this.router.navigate(['home']);//mandalo al home
+              }
+            })
           });
-         }
+        }
+
+      })
+    });
+
+      
+         
        }));
    }
 

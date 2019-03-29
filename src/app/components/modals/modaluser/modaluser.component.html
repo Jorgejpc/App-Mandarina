@@ -12,7 +12,7 @@
       </div>
       <div class="modal-body">
         <form name="formUser" #formUser="ngForm" (ngSubmit)="onSaveUser(formUser)">
-          <input type="text" name="id" [(ngModel)]="this.dataApi.selectedUser.id">
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedUser.id">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="admin">Admin</label>

@@ -39,6 +39,7 @@ import { CategoryPipe } from './pipes/category.pipe';
 import { ModaluserComponent } from './components/modals/modaluser/modaluser.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ModalprofileComponent } from './components/modals/modalprofile/modalprofile.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 
 
@@ -72,6 +73,7 @@ import { ModalprofileComponent } from './components/modals/modalprofile/modalpro
     ModaluserComponent,
     BusquedaComponent,
     ModalprofileComponent,
+    BienvenidaComponent,
   ],
   imports: [
     BrowserModule,
