@@ -1,7 +1,7 @@
 <div class="container">
   <section class="row mt-2">
     <div class="col">
-      <table style="background-color:rgb(235, 238, 84)" class="table table-hover">
+      <table style="background-color:rgb(235, 238, 84)" class="table table-hover table-responsive">
         <thead>
           <tr></tr>
           <th>#</th>
@@ -14,7 +14,7 @@
           <th></th>
    
         </thead>
-        <tbody style="background-color:rgb(252, 253, 185)">
+        <tbody style="background-color:rgb(252, 253, 185) table-responsive">
           <tr *ngFor= "let product of products; index as i">
             <th scope="row">{{i+1}}</th>
             <td><img width="70" height="70" class=" rounded-circle" src="{{product.imagenPrincipal}}" alt="{{product.imagenPrincipal}}"></td> 
@@ -28,6 +28,8 @@
           </tr>
         </tbody>
       </table>
+      <br>
+      <br>
     </div>
     
    </section>

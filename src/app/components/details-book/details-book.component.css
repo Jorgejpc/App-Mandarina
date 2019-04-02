@@ -116,7 +116,7 @@ body {
   
   .add-to-cart, .like {
     background: #ff9f1a;
-    padding: 1.2em 1.5em;
+    padding: 1.2em 1.7em;
     border: none;
     text-transform: UPPERCASE;
     font-weight: bold;
@@ -129,7 +129,7 @@ body {
 
       .add-to-list, .like {
         background:#40EC14;
-        padding: 1.2em 2.0em;
+        padding: 1.2em 2.1em;
         margin-left: 10px;
         border: none;
         text-transform: UPPERCASE;

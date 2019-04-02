@@ -1,6 +1,6 @@
 .navbar-brand{
 display: flex;
-align-items: center;
+align-items: left;
     
 }
 
@@ -20,5 +20,5 @@ margin:auto;
 
 .navbar-nav{
 display: flex;
-align-items: center;
+align-items: left;
 }
