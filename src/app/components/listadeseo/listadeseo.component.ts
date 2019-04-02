@@ -9,7 +9,7 @@ import { Producto } from 'src/app/models/producto';
 })
 export class ListadeseoComponent implements OnInit {
 
-  constructor(private servicioCarrito: CrudService) { }
+  constructor(private servicioCarrito:CrudService) { }
   public products:Producto[];
 
 
@@ -25,5 +25,13 @@ export class ListadeseoComponent implements OnInit {
     this.servicioCarrito.deleteProductDeseos(id);
 
   }
+
+  alCarrito(id:any){
+    this.servicioCarrito.mandarCarrito(id);
+    this.
+     
+     onDeleteProduct(id.id);
+  }
+ 
 
 }

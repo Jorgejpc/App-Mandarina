@@ -81,10 +81,10 @@ export class CrudService {
     this.productDoc.delete();
   }
 
-  mandarCarrito(idProduct:Producto){
-    var messageRef = this.db.doc(this.idUser).collection('carrito').add(idProduct);
+mandarCarrito(idProduct:any){
+  var messageRef = this.db.doc(this.idUser).collection('carrito').add(idProduct);
 }
-mandarWishList(idProduct:Producto){
+mandarWishList(idProduct:any){
   var messageRef = this.db.doc(this.idUser).collection('deseos').add(idProduct);
 }
 isAuth() {
