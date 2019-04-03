@@ -14,10 +14,12 @@ export class ListadeseoComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.servicioCarrito.getWishList().subscribe(deseos=>{
       this.products = deseos; 
   
     });
+   
   }
   onDeleteProduct(id:any){
     const confirmacion =  confirm('Estas seguro?');

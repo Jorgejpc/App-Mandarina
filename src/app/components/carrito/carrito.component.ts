@@ -24,6 +24,7 @@ export class CarritoComponent implements OnInit {
   
     this.servicioCarrito.getCarrito().subscribe(carrito=>{
     this.products = carrito; 
+    this.servicioCarrito.prueba();
 
   });
   
@@ -34,4 +35,5 @@ export class CarritoComponent implements OnInit {
     this.servicioCarrito.deleteProductCarrito(id);
 
   }
+  
 }

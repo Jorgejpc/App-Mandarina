@@ -22,6 +22,7 @@ export class CrudService {
     this.db=afs.collection<UserInterface>('users');
     this.carrito = this.db.doc(this.idUser).collection<Producto>('carrito').valueChanges();
    }
+   
 
 
   private productCollection: AngularFirestoreCollection<Producto>;
@@ -35,8 +36,8 @@ export class CrudService {
   };
   private db:AngularFirestoreCollection<UserInterface>;
   private idUser:string='123';
+ 
   
-
 
   getProducts(){
     return this.products = this.productCollection.snapshotChanges()
@@ -82,6 +83,7 @@ export class CrudService {
   }
 
 mandarCarrito(idProduct:any){
+ 
   var messageRef = this.db.doc(this.idUser).collection('carrito').add(idProduct);
 }
 mandarWishList(idProduct:any){
@@ -131,7 +133,7 @@ deleteProductDeseos(idProduct: string): void{
   this.productDoc = this.afs.collection<UserInterface>('users').doc(this.idUser).collection('deseos').doc(idProduct);
   this.productDoc.delete();
 }
- 
+
 
 
 }
