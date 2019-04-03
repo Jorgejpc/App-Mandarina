@@ -40,7 +40,7 @@ import { ModaluserComponent } from './components/modals/modaluser/modaluser.comp
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { ModalprofileComponent } from './components/modals/modalprofile/modalprofile.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 @NgModule({
@@ -81,7 +81,8 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule,  
+    AngularFireStorageModule, 
+    NgxPaginationModule 
   ],
   providers: [
     AngularFireAuth,
