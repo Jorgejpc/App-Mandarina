@@ -53,8 +53,8 @@
                     </a>
                     <ul class="social">
                    <!---      <li><a href=""><i class="fa fa-eye" [routerLink]="['/producto', item.id]"></i></a></li>-->
-                        <li><a href=""><i class="fa fa-shopping-bag"></i></a></li>
-                        <li><a href=""><i class="fa fa-shopping-cart" ></i></a></li>
+                        <li><a><i class="fa fa-shopping-cart" (click)="this._service.mandarCarrito(item)" ></i></a></li>
+                        <li><a><i class="fa fa-shopping-bag" (click)="this._service.mandarWishList(item)"></i></a></li> 
                     </ul>
                    <!--- <span class="product-new-label">New</span>  -->
                 </div>

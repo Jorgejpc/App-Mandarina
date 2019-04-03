@@ -1,20 +1,20 @@
 <div class="container">
   <section class="row mt-2">
     <div class="col">
-      <table style="background-color:rgb(235, 238, 84)" class="table table-hover table-responsive">
+      <table style="background-color:rgb(187, 185, 183)" class="table table-hover table-responsive">
         <thead>
           <tr></tr>
-          <th>#</th>
-          <th>Imagen</th>
-          <th>Nombre</th>
-          <th>Categoria</th>
-          <th>Descripcion</th>
-          <th>Apreciacion</th>
-          <th>Disponibles</th>
+          <th class="text-center">#</th>
+          <th class="text-center">Imagen</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Categoria</th>
+          <th class="text-center">Descripcion</th>
+          <th class="text-center">Apreciacion</th>
+          <th class="text-center">Disponibles</th>
           <th></th>
    
         </thead>
-        <tbody style="background-color:rgb(252, 253, 185) table-responsive">
+        <tbody style="background-color:rgb(224, 219, 217)">
           <tr *ngFor= "let product of products; index as i">
             <th scope="row">{{i+1}}</th>
             <td><img width="70" height="70" class=" rounded-circle" src="{{product.imagenPrincipal}}" alt="{{product.imagenPrincipal}}"></td> 
@@ -22,9 +22,9 @@
             <td>{{product.category}}</td>
             <td>{{product.descripcion}}</td>
             <td>{{product.apreciacion}}</td>
-            <td>{{product.disponibles}}</td>
-            <td><button class="btn btn-warning" (click)="alCarrito(product)">Agregar al Carrito</button></td>
-            <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">Borrar</button></td>
+            <td class="text-center">{{product.disponibles}}</td>
+            <td><button style = "width: 140px" class="btn btn-warning" (click)="alCarrito(product)">Mandar Carrito</button></td>
+            <td><button class="btn btn-danger" (click)="onDeleteProduct(product.id)">x</button></td>
           </tr>
         </tbody>
       </table>

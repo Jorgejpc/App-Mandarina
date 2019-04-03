@@ -29,7 +29,7 @@ export class CarritoComponent implements OnInit {
   
   }
   onDeleteProduct(id:any){
-    const confirmacion =  confirm('Estas seguro?');
+    const confirmacion =  confirm('Eliminaras el Producto de tu Carrito, Estas seguro?');
     if(confirmacion)
     this.servicioCarrito.deleteProductCarrito(id);
 
