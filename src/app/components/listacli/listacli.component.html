@@ -1,113 +1,113 @@
 <section id="books">
-      <div class="d-flex flex-row">
-      
-        <div class="form-group container">
-        <input type="text" placeholder="Buscar Nombre" name="filtroProduct" [(ngModel)]="filtroProduct">
-      </div>
-      
-      <ul class="nav nav-pills">
-        <div class="form-group col-md-6 d-flex flex-row">
-          <label class="float-left" for="catProduct">Categorías:  </label>
-            <select name="catProduct" class="form-control" [(ngModel)]="this.catProduct">
-                    <option value="">Todas</option>
-                    <option value="Sala">Sala</option>
-                    <option value="Decoracion">Decoracion</option>
-                    <option value="Electrodomesticos">Electrodomesticos</option>
-                    <option value="Entretenimiento">Entretenimiento</option>
-            </select>
-        </div>
-      
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Alph
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button" (click)="setAlpha(0)">None</button>
-            <button class="dropdown-item" type="button" (click)="setAlpha(1)">Asc</button>
-            <button class="dropdown-item" type="button" (click)="setAlpha(2)">Desc</button>
-          </div>       
-        </div>
-      
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Price
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button" (click)="setBeta(0)">None</button>
-            <button class="dropdown-item" type="button" (click)="setBeta(1)">Asc</button>
-            <button class="dropdown-item" type="button" (click)="setBeta(2)">Desc</button>
-          </div>       
-      </div>
-    </ul>
+    <div class="d-flex flex-row">
+    
+      <div class="form-group container">
+      <input type="text" placeholder="Buscar Nombre" name="filtroProduct" [(ngModel)]="filtroProduct">
     </div>
-<!---->
-    <div class="container">
-      <h3 class="h3"></h3>
-      <div class="row">
-          <div class="col-md-3 col-sm-6 mb-3" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
-              <div class="product-grid3">
-                  <div class="product-image3">
-                      <a href="" [routerLink]="['/producto', item.id]" >
-                          <img class="pic-1 img-fluid" src="{{item.imagenPrincipal}}">
-                          <img class="pic-2 img-fluid" src="{{item.imagenSecundaria}}">
-                      </a>
-                      <ul class="social">
-                     <!---      <li><a href=""><i class="fa fa-eye" [routerLink]="['/producto', item.id]"></i></a></li>-->
-                          <li><a href=""><i class="fa fa-shopping-bag"></i></a></li>
-                          <li><a href=""><i class="fa fa-shopping-cart" ></i></a></li>
-                      </ul>
-                     <!--- <span class="product-new-label">New</span>  -->
-                  </div>
-                  <div class="product-content">
-                      <h1 class="title"><a href="">{{item.name}}</a></h1>
-                      <div class="price">    
-                          ${{item.price}}
-                         
-                            <span>{{item.oldPrice}}</span>
-                         
-                          <!---    <span>$75.00</span>   numero rayado-->
-                          
-                      </div>
-                      <ul class="rating">
-                          <li class="fa fa-star"></li>
-                          <li class="fa fa-star"></li>
-                          <li class="fa fa-star"></li>
-                          <li class="fa fa-star disable"></li>
-                          <li class="fa fa-star disable"></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </div>
+    
+    <ul class="nav nav-pills">
+      <div class="form-group col-md-6 d-flex flex-row">
+        <label class="float-left" for="catProduct">Categorías:  </label>
+          <select name="catProduct" class="form-control" [(ngModel)]="this.catProduct">
+                  <option value="">Todas</option>
+                  <option value="Sala">Sala</option>
+                  <option value="Decoracion">Decoracion</option>
+                  <option value="Electrodomesticos">Electrodomesticos</option>
+                  <option value="Entretenimiento">Entretenimiento</option>
+          </select>
       </div>
-  <!--
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
-        <div class="card_book">
-          <div class="card">
-            <div class="card-body text-center">
-              <p>
-                <img class="img-fluid" src="{{item.imagenPrincipal}}" alt="{{item.name}}">
-              </p>
-              <h4  class="card-title">{{item.name}}</h4>
-              <p class="card-text">
-                {{item.descripcion}}
-              </p>
-              <div class="container-precio-idioma">
-                <p class="badge badge-info">
-                  Precio={{item.price}}$
-                </p>
-                <p class="badge badge-info">
-                  {{item.apreciacion}}
-                </p>
-              </div>
-              <a href="" class="btn btn-block btn-primary" [routerLink]="['/producto', item.id]">Detalles</a>
-            </div>
-          </div>
-        </div>
-      </div> 
+    
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Alph
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" (click)="setAlpha(0)">None</button>
+          <button class="dropdown-item" type="button" (click)="setAlpha(1)">Asc</button>
+          <button class="dropdown-item" type="button" (click)="setAlpha(2)">Desc</button>
+        </div>       
+      </div>
+    
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Price
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" (click)="setBeta(0)">None</button>
+          <button class="dropdown-item" type="button" (click)="setBeta(1)">Asc</button>
+          <button class="dropdown-item" type="button" (click)="setBeta(2)">Desc</button>
+        </div>       
     </div>
+  </ul>
   </div>
+<!---->
+  <div class="container">
+    <h3 class="h3"></h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-3" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
+            <div class="product-grid3">
+                <div class="product-image3">
+                    <a href="" [routerLink]="['/producto', item.id]" >
+                        <img class="pic-1 img-fluid" src="{{item.imagenPrincipal}}">
+                        <img class="pic-2 img-fluid" src="{{item.imagenSecundaria}}">
+                    </a>
+                    <ul class="social">
+                   <!---      <li><a href=""><i class="fa fa-eye" [routerLink]="['/producto', item.id]"></i></a></li>-->
+                        <li><a href=""><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href=""><i class="fa fa-shopping-cart" ></i></a></li>
+                    </ul>
+                   <!--- <span class="product-new-label">New</span>  -->
+                </div>
+                <div class="product-content">
+                    <h1 class="title"><a href="">{{item.name}}</a></h1>
+                    <div class="price">    
+                        ${{item.price}}
+                       
+                          <span>{{item.oldPrice}}</span>
+                       
+                        <!---    <span>$75.00</span>   numero rayado-->
+                        
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                        <li class="fa fa-star disable"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of products | sort :alpha | filtro:filtroProduct | prices :beta | category:catProduct">
+      <div class="card_book">
+        <div class="card">
+          <div class="card-body text-center">
+            <p>
+              <img class="img-fluid" src="{{item.imagenPrincipal}}" alt="{{item.name}}">
+            </p>
+            <h4  class="card-title">{{item.name}}</h4>
+            <p class="card-text">
+              {{item.descripcion}}
+            </p>
+            <div class="container-precio-idioma">
+              <p class="badge badge-info">
+                Precio={{item.price}}$
+              </p>
+              <p class="badge badge-info">
+                {{item.apreciacion}}
+              </p>
+            </div>
+            <a href="" class="btn btn-block btn-primary" [routerLink]="['/producto', item.id]">Detalles</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
 -->
 </section>
