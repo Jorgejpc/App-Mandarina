@@ -27,7 +27,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.authService.isAuth().subscribe(user => {
       if (user) {
-        //console.log('User:', user);
         this.user.name = user.displayName;
         this.user.email = user.email;
         this.user.photoUrl = user.photoURL;
@@ -39,7 +38,6 @@ export class ProfileComponent implements OnInit {
   }
 
   onPreUpDateUser(user: UserInterface){
-    //console.log('USER', user);
     this.dataApi.selectedUser = Object.assign({}, user);
   }
 
@@ -47,7 +45,6 @@ export class ProfileComponent implements OnInit {
     this.authService.isAuth().subscribe( auth => {
       this.dataApi.getOneUsers(auth.uid).subscribe(data=>{
           this.users=data;
-          console.log('Esto es el users:', this.users);
         })
     });
   }

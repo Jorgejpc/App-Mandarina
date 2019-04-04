@@ -70,7 +70,6 @@ export class DataApiService {
     this.userDoc= this.afs.doc<UserInterface>(`users/${idUser}`);
     return this.userDoc.snapshotChanges()
     .pipe(map(action=>{action.payload.data()
-      console.log(action.payload.data())
         const data = action.payload.data() as UserInterface;
         return data.admin;
     }));
@@ -80,7 +79,6 @@ export class DataApiService {
     this.userDoc= this.afs.doc<UserInterface>(`users/${idUser}`);
     return this.userDoc.snapshotChanges()
     .pipe(map(action=>{action.payload.data()
-      console.log(action.payload.data())
         const data = action.payload.data() as UserInterface;
         return data.inhabilitado;
     }));
@@ -90,7 +88,6 @@ export class DataApiService {
     this.userDoc= this.afs.doc<UserInterface>(`users/${idUser}`);
     return this.userDoc.snapshotChanges()
     .pipe(map(action=>{action.payload.data()
-      console.log(action.payload.data())
         const data = action.payload.data() as UserInterface;
         return data;
     }));

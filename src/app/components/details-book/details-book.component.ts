@@ -46,7 +46,6 @@ export class DetailsBookComponent implements OnInit {
     this.iProduct=idProduct;
     this._service.getValoracion(idProduct).subscribe( data =>{
       this.valoracion = data;
-      console.log('LA VALORACION ES:',data);
 
     })
   }

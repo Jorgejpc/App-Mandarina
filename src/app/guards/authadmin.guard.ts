@@ -36,7 +36,6 @@ export class AuthadminGuard implements CanActivate {
       this.inhabilitado.getOneinhabilitado(auth.uid).subscribe(data=>{
         this.isInhabilitado=data;
         if(data=='true'){ //Si esta baneado
-          console.log('data auth',data);
           this.router.navigate(['']);//mandalo a la bienbenida
         }
         else{ //si no esta baneado

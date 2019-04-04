@@ -33,18 +33,14 @@ export class NavbarComponent implements OnInit {
   getCurrentUser(){
     this.authService.isAuth().subscribe( auth => {
       if(auth){
-        console.log('user logged', auth);
         this.isLogged = true; 
         this.admin.getOneAdmin(auth.uid).subscribe(data=>{
           this.isAdmin=data;
-          console.log('El usuario es admin:',data);
         })
         this.inhabilitado.getOneinhabilitado(auth.uid).subscribe(data=>{
           this.isinhabilitado=data;
-          console.log('El usuario esta inhabilitado:',data);
         })
       } else {
-        console.log('NOT user logged')
         this.isLogged = false; 
       }
     });

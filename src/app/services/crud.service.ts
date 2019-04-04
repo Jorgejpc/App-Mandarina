@@ -138,7 +138,6 @@ getValoracion(idProduct: String){
   this.productDoc= this.afs.doc<Producto>(`products/${idProduct}`);
   return this.productDoc.snapshotChanges()
   .pipe(map(action=>{action.payload.data()
-    console.log(action.payload.data())
       const data = action.payload.data() as Producto;
       return data.apreciacion;
   }));

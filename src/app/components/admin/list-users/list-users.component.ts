@@ -36,7 +36,6 @@ export class ListUsersComponent implements OnInit {
   }
 
   onPreUpDateUser(user: UserInterface){
-    console.log('USER', user);
     this.dataApi.selectedUser = Object.assign({}, user);
   }
   
