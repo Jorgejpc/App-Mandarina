@@ -24,10 +24,13 @@ export class DetailsBookComponent implements OnInit {
   public idUser: any;
   private db:AngularFirestore;
   private iProduct;
+
+  public valoracion: any;
   
   ngOnInit() {
     const idProduct = this.ruta.snapshot.params['id'];
     this.getDetails(idProduct);
+    this.getCurrentValoracion(idProduct);
     
     
   }
@@ -36,7 +39,14 @@ export class DetailsBookComponent implements OnInit {
     this._service.getOneProduct(idProduct).subscribe( product =>{
       this.product = product;
 
-
+    })
+  }
+  
+  getCurrentValoracion(idProduct: string ): void{
+    this.iProduct=idProduct;
+    this._service.getValoracion(idProduct).subscribe( data =>{
+      this.valoracion = data;
+      console.log('LA VALORACION ES:',data);
 
     })
   }

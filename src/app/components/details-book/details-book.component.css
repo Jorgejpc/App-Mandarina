@@ -128,7 +128,7 @@ body {
       color: #fff; }
 
       .add-to-list, .like {
-        background:#40EC14;
+        background:rgb(70, 214, 147);
         padding: 1.2em 2.1em;
         margin-left: 10px;
         border: none;
@@ -138,7 +138,7 @@ body {
         -webkit-transition: background .3s ease;
                 transition: background .3s ease; }
         .add-to-list:hover, .like:hover {
-            background: #36A41A;
+            background: rgb(51, 158, 108);
             color: #fff; }
   
   .not-available {

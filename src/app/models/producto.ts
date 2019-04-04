@@ -9,7 +9,7 @@ export class Producto{
     imagenTercera?:String;
     imagenCuarta?:String;
     imagenQuinta?:String;
-    apreciacion?:number;
+    apreciacion?:String;
     disponibles?:number;
     promocion?:boolean;
     oferta?:boolean;

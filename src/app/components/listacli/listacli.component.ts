@@ -27,6 +27,7 @@ export class ListacliComponent implements OnInit {
    public productoClik: Producto;
 
   public isAdmin: any;
+  public valoracion: any;
 
   private iProduct;
 

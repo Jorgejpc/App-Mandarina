@@ -42,14 +42,41 @@
 						<h3 class="product-title">{{product.name}}</h3>
 						<h5 class="sizes">Categoria: {{product.category}}</h5>
 						<div class="rating">
-							<div class="stars">
+							<div class="stars" *ngIf="valoracion==='1'">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<div class="stars" *ngIf="valoracion==='2'">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<div class="stars" *ngIf="valoracion==='3'">
 								<span class="fa fa-star checked"></span>
 								<span class="fa fa-star checked"></span>
 								<span class="fa fa-star checked"></span>
 								<span class="fa fa-star"></span>
 								<span class="fa fa-star"></span>
 							</div>
-							<span class="review-no">{{product.apreciacion}}</span> <!------ Esto se deberia de ver abajo de las estrellas----->
+							<div class="stars" *ngIf="valoracion==='4'">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<div class="stars" *ngIf="valoracion==='5'">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+							</div>
 						</div>
 						<p class="product-description">Descripcion: {{product.descripcion}}</p>
 						<h5 class="price">Precio: <span>${{product.price}}</span></h5>
